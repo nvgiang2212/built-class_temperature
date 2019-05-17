@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xay dung lop Temperature</title>
+</head>
+<body>
+	<script>
+		function Temperature(nhietdo) {
+			this.nhietdo = nhietdo;
+			this.CsangF = function() {
+				return 9/5 * this.nhietdo + 32;
+			}
+			this.CsangK = function() {
+				return this.nhietdo + 273.15;
+			}
+		}
+
+		function Chuyendoi(nhietdo) {
+			let temperature = new Temperature(nhietdo);
+			alert("Do F: " + temperature.CsangF() + "       " + "Do K: " + temperature.CsangK());
+		}
+
+		function Input() {
+			let nhietdo;
+			do {
+				nhietdo = Number(prompt("Nhap nhiet do:"));
+			} while (isNaN(nhietdo) || nhietdo < -273);
+			Chuyendoi(nhietdo);
+		}
+
+		Input();
+	</script>
+</body>
+</html>
